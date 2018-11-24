@@ -15,31 +15,31 @@ class App extends Component {
         title: 'Assai Wholesaler',
         lat: -23.6117702,
         lng: -46.4746064,
-        address: 'Avenue Ragueb Chohfi, 58'
+        address: '58 Avenue Ragueb Chohfi'
       },
       {
         title: 'São Mateus Terminal',
         lat: -23.6127191,
         lng: -46.4762177,
-        address: 'Avenue Adélia Ragueb Chohfi, 100'
+        address: '100 Avenue Adélia Ragueb Chohfi'
       },
       {
         title: 'Pernambucanas',
         lat: -23.6106855,
         lng: -46.4763921,
-        address: 'Avenue Mateo Bei, 3430'
+        address: '3430 Avenue Mateo Bei'
       },
       {
         title: 'Sesc Itaquera',
         lat: -23.58551340,
         lng: -46.4750152,
-        address: 'Avenue Fernando do Espírito Santo Alves de Mattos, 1000'
+        address: '1000 Avenue Fernando do Espírito Santo Alves de Mattos'
       },
       {
         title: 'Bradesco ',
         lat: -23.6078391,
         lng: -46.4777606,
-        address: 'Avenue Mateo Bei, 1365'
+        address: '1365 Avenue Mateo Bei'
       },
     ]
   }
