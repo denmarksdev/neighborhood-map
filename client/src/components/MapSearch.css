@@ -7,13 +7,12 @@
     transform: translate(0, 0)
 }
 
-.map-search-locations {
+
+
+.map-search-location {
     display: flex;
     flex-direction: column;
     min-width: 250px;
-}
-
-.map-search-location {
     padding: 10px;
     margin-bottom: 10px;
     cursor: pointer;
@@ -51,6 +50,7 @@
 .map-search-input {
     font-size: 16px;
     margin-bottom: 10px;
+    width: 100%;
 }
 
 figure {

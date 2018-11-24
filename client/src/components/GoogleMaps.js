@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './GoogleMaps.css';
+import FlickerAPI from '../api/FlikerAPI'
+
+const flickerAPI = new FlickerAPI();
 
 export default class GoogleMaps extends Component {
 
@@ -49,7 +52,7 @@ export default class GoogleMaps extends Component {
 
     initMap = () => {
 
-        if ( typeof window.google === 'objec' && typeof window.google.maps === 'object') {
+        if (typeof window.google === 'objec' && typeof window.google.maps === 'object') {
             this.setState({
                 isLoaded: true
             })
@@ -68,8 +71,12 @@ export default class GoogleMaps extends Component {
 
         const infoWindow = new window.google.maps.InfoWindow()
 
-        map.addListener('click', () => {
+        infoWindow.addListener('closeclick', () =>{
+            onClearSelection();
+        })
 
+        // Close Marker on map clck
+        map.addListener('click', () => {
             this.state.infoWindow.close();
 
             if (onClearSelection)
@@ -84,7 +91,6 @@ export default class GoogleMaps extends Component {
         // Create Marker with locations
 
         let markers = new Map();
-
         if (locations) {
             locations.forEach(location => {
 
@@ -96,9 +102,27 @@ export default class GoogleMaps extends Component {
                 })
 
                 marker.addListener('click', () => {
-                    const markerHTML = `<h3>${marker.title}</h3><p>${marker.address}</p>`
-                    infoWindow.setContent(markerHTML);
-                    infoWindow.open(map, marker);
+
+                    flickerAPI.getFoto(marker.title).then(urlImage => {
+                        // Display location information with Flickr image
+                        const markerHTML = `
+                        <di>
+                            <h3>${marker.title}</h3>
+                            <figure>
+                                <img class='map-image' src='${urlImage}'>
+                                <figcaption> Photo on <a target='_blank' href='https://www.flickr.com'>Flickr</a></figcaption>
+                            </figure>
+                            <p>${marker.address}</p>
+                        </div>`
+                        infoWindow.setContent(markerHTML);
+                        infoWindow.open(map, marker);
+                    }).catch(err => {
+                        //  Could not load Flicker images
+                        const markerHTML = `<h3>${marker.title}</h3><p>${marker.address}</p>`
+                        console.error("Photo not found on flicker")
+                        infoWindow.setContent(markerHTML);
+                        infoWindow.open(map, marker);
+                    })
                 })
 
                 markers.set(marker.title, marker);

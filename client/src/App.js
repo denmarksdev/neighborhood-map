@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import MapSerach from './components/MapSearch'
+import hamburger from './hamburger.svg'
 
 class App extends Component {
 
@@ -49,24 +50,21 @@ class App extends Component {
   }
 
   configLocationsClicks = () => {
-
     let spanLocations = document.getElementsByClassName('map-search-location');
     let drawer = document.querySelector('.map-search-locations');
     for (let i = 0; i < spanLocations.length; i++) {
       spanLocations[i].addEventListener('click', () => {
+        // Close offset canvas
         drawer.classList.remove('open');
       })
-
     }
   }
 
   configMenuDrawer() {
-
     let menu = document.querySelector('#app-menu');
     let drawer = document.querySelector('.map-search-locations');
     let input = document.querySelector('input');
     let buttonClose = document.querySelector('button');
-
 
     menu.addEventListener('click', function (e) {
       console.log('Abrir')
@@ -76,6 +74,7 @@ class App extends Component {
     });
 
     buttonClose.addEventListener('click', function () {
+      // Close offset canvas
       drawer.classList.remove('open');
     });
   }
@@ -83,7 +82,6 @@ class App extends Component {
   searchUpdated = () => {
     this.configLocationsClicks();
   }
-
 
   render() {
 
@@ -93,7 +91,7 @@ class App extends Component {
       <div className="app">
         <header className="app-header" >
           <h2>São Mateus Locations</h2>
-          <span id="app-menu" >Menu</span>
+          <img id="app-menu"  src={hamburger} ></img>
         </header>
         <MapSerach
           locations={locations}
