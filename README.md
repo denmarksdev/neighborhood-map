@@ -11,7 +11,7 @@ This application shows some locations of the city of São Mateus. Integrated wit
 
 ## Screenshot
 
-![](https://github.com/denmarksdev/neighborhood-map/blob/master/screenshot.jpg?raw=true "São Mateus Locations APP")
+![](https://github.com/denmarksdev/neighborhood-map/blob/master/app-screenshot.jpg?raw=true "São Mateus Locations APP")
 
 
 ## Third Part APIs
