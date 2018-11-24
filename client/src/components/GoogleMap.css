@@ -1,0 +1,7 @@
+#map {
+    height: auto;
+    min-height: 100vh ;
+    flex-grow: 1;
+}
+
+
