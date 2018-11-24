@@ -1,7 +1,9 @@
 #map {
     height: auto;
-    min-height: 100vh ;
+    min-height: calc(100vh - 70px);
     flex-grow: 1;
 }
 
-
+.map-image {
+    width: 200px;
+}

@@ -1,4 +1,25 @@
-.App {
+.app {
   display: inherit;
 }
 
+.app-header {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  color: #fffbff;
+  padding: 10px;
+}
+
+#app-menu {
+  margin-left: 10px;
+  display: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+@media screen and (max-width:450px) {
+  #app-menu {
+    display: inherit;
+  }
+}

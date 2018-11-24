@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import MapSerach from './components/MapSearch'
 
-
 class App extends Component {
 
-  
   state = {
     centerPosition: {
       lat: -23.6117702,
@@ -34,7 +32,7 @@ class App extends Component {
         title: 'Sesc Itaquera',
         lat: -23.58551340,
         lng: -46.4750152,
-        address:'Avenue Fernando do Espírito Santo Alves de Mattos, 1000'
+        address: 'Avenue Fernando do Espírito Santo Alves de Mattos, 1000'
       },
       {
         title: 'Bradesco ',
@@ -45,6 +43,47 @@ class App extends Component {
     ]
   }
 
+  componentDidMount = () => {
+    this.configMenuDrawer();
+    this.configLocationsClicks();
+  }
+
+  configLocationsClicks = () => {
+
+    let spanLocations = document.getElementsByClassName('map-search-location');
+    let drawer = document.querySelector('.map-search-locations');
+    for (let i = 0; i < spanLocations.length; i++) {
+      spanLocations[i].addEventListener('click', () => {
+        drawer.classList.remove('open');
+      })
+
+    }
+  }
+
+  configMenuDrawer() {
+
+    let menu = document.querySelector('#app-menu');
+    let drawer = document.querySelector('.map-search-locations');
+    let input = document.querySelector('input');
+    let buttonClose = document.querySelector('button');
+
+
+    menu.addEventListener('click', function (e) {
+      console.log('Abrir')
+      drawer.classList.toggle('open');
+      input.focus();
+      e.stopPropagation();
+    });
+
+    buttonClose.addEventListener('click', function () {
+      drawer.classList.remove('open');
+    });
+  }
+
+  searchUpdated = () => {
+    this.configLocationsClicks();
+  }
+
 
   render() {
 
@@ -52,9 +91,14 @@ class App extends Component {
 
     return (
       <div className="app">
+        <header className="app-header" >
+          <h2>São Mateus Locations</h2>
+          <span id="app-menu" >Menu</span>
+        </header>
         <MapSerach
           locations={locations}
-          centerPosition ={centerPosition}
+          centerPosition={centerPosition}
+          onSearchUpdated={this.searchUpdated}
         />
       </div>
     );
