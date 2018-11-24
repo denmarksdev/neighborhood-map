@@ -5,7 +5,7 @@ This application shows some locations of the city of São Mateus. Integrated wit
 - Require [npm](https://www.npmjs.com/get-npm)
 
 ## Usage
-1. Clone or dowload this repositorie
+1. Clone or download this repositorie
 1. On the **client folder** run `npm i` to install all packages,  It might take a while.
 1. On the **client folder** run `npm start`
 
