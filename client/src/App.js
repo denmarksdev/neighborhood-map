@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import GoogleMap from './components/GoogleMap'
-
-
+import MapSerach from './components/MapSearch'
 
 
 class App extends Component {
@@ -53,8 +51,8 @@ class App extends Component {
     const { locations, centerPosition } = this.state;
 
     return (
-      <div className="App">
-        <GoogleMap
+      <div className="app">
+        <MapSerach
           locations={locations}
           centerPosition ={centerPosition}
         />

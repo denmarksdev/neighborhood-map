@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './GoogleMap.css';
+import './GoogleMaps.css';
 
-export default class GoogleMap extends Component {
+export default class GoogleMaps extends Component {
 
     state = {
         isLoaded: false,
@@ -105,7 +105,6 @@ export default class GoogleMap extends Component {
             });
         }
 
-
         this.setState({
             markers,
             infoWindow
@@ -114,9 +113,6 @@ export default class GoogleMap extends Component {
 
 
     render() {
-
-        
-
         return (
             <main id="map">
             </main>
