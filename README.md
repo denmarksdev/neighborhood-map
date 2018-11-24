@@ -5,9 +5,16 @@ This application shows some locations of the city of São Mateus. Integrated wit
 - Require [npm](https://www.npmjs.com/get-npm)
 
 ## Usage
-
-1. If React is not installed run the follow command `npm install -g create-react-app`, It might take a while
-2. On the **client folder** run `npm i` to install all packages
-3. On the **client folder** run `npm start`
+1. Clone or dowload this repositorie
+1. On the **client folder** run `npm i` to install all packages,  It might take a while.
+1. On the **client folder** run `npm start`
 
 ## Screenshot
+
+
+
+## Third Part API'S
+
+- [Google Maps API](https://developers.google.com/maps/documentation/) 
+- [Flickr API](https://www.flickr.com/services/api/)
+
