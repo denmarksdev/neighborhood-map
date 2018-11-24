@@ -1,5 +1,5 @@
 /* Colors Pallets
-primary:  #000500
+primary:  #2a2723
 secundary: #fffbff
 third: #362417
 */
@@ -11,7 +11,7 @@ third: #362417
 html, body {
   margin: 0;
   padding: 0;
-  background: #000500;
+  background: #2a2723;
 }
 
 html {

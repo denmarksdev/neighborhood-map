@@ -57,7 +57,7 @@ export default class MapSearch extends Component {
             <div className="map-search-container">
                 <aside className="map-search-locations" >
                     <div className="map-search-filter-container">
-                        <h3 className="map-search-filter-title"  >São Mateus Locations</h3>
+                        <h3 className="map-search-filter-title">Filter São Mateus Locations</h3>
                         <button className="map-search-close-button">X</button>
                     </div>
                     {/* Filter */}

@@ -1,13 +1,12 @@
 .map-search-container {
     display: flex;
-    background: #000;
+    background: #2a2723;
+
 }
 
 .map-search-locations.open {
     transform: translate(0, 0)
 }
-
-
 
 .map-search-location {
     display: flex;
@@ -17,11 +16,12 @@
     margin-bottom: 10px;
     cursor: pointer;
     color: #fffbff;
+    
 }
 
 .map-search-location:hover {
     background-color: #fffbff;
-    color: #000500;
+    color: #3d4543;
 }
 
 .map-search-filter-container {
@@ -31,7 +31,8 @@
 }
 
 .map-search-filter-title {
-    color: #92817A;
+    color: #fffbff;
+    padding: 5px;
     display: none;
 }
 
@@ -41,7 +42,7 @@
     cursor: pointer;
     align-self: flex-end;
     display: none;
-    background: #000500;
+    background: #2a2723;
     color: #fffbff;
     border: 0;
     font-size: 18px;
@@ -49,12 +50,13 @@
 
 .map-search-input {
     font-size: 16px;
-    margin-bottom: 10px;
-    width: 100%;
+    margin: 0 5px;
+    width: 96%;
 }
 
 figure {
     margin: 0;
+    max-width: 200px;
 }
 
 @media screen and (max-width:450px) {
@@ -65,11 +67,17 @@ figure {
         top: 0;
         left: 0;
         transform: translate(-9999px, 0);
-        background: #000;
+        background: #382f2d;
         z-index: 1;
     }
     .map-search-filter-title {
         display: inherit;
+        
+    }
+
+    .map-search-input {
+        margin-bottom: 5px;
+
     }
     .map-search-close-button {
         display: inherit;
