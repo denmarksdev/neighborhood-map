@@ -106,20 +106,23 @@ export default class GoogleMaps extends Component {
                     flickerAPI.getFoto(marker.title).then(urlImage => {
                         // Display location information with Flickr image
                         const markerHTML = `
-                        <di>
-                            <h3>${marker.title}</h3>
-                            <figure>
-                                <img class='map-image' src='${urlImage}'>
-                                <figcaption> Photo on <a target='_blank' href='https://www.flickr.com'>Flickr</a></figcaption>
-                            </figure>
-                            <p>${marker.address}</p>
-                        </div>`
+                            <di>
+                                <h3>${marker.title}</h3>
+                                <figure>
+                                    <img class='map-image' src='${urlImage}'>
+                                    <figcaption> Photo on <a target='_blank' href='https://www.flickr.com'>Flickr</a></figcaption>
+                                </figure>
+                                <p>${marker.address}</p>
+                            </div>`
                         infoWindow.setContent(markerHTML);
                         infoWindow.open(map, marker);
                     }).catch(err => {
+                        console.log(err);
                         //  Could not load Flicker images
-                        const markerHTML = `<h3>${marker.title}</h3><p>${marker.address}</p>`
-                        console.error("Photo not found on flicker")
+                        const markerHTML = 
+                            `<h3>${marker.title}</h3>
+                            <p class='map-error' >Photo not found on flicker</p>
+                            <p>${marker.address}</p>`
                         infoWindow.setContent(markerHTML);
                         infoWindow.open(map, marker);
                     })
