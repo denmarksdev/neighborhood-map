@@ -1,7 +1,6 @@
 .map-search-container {
     display: flex;
     background: #2a2723;
-
 }
 
 .map-search-locations.open {
@@ -16,7 +15,6 @@
     margin-bottom: 10px;
     cursor: pointer;
     color: #fffbff;
-    
 }
 
 .map-search-location:hover {
@@ -42,7 +40,7 @@
     cursor: pointer;
     align-self: flex-end;
     display: none;
-    background: #2a2723;
+    background: #382f2d;
     color: #fffbff;
     border: 0;
     font-size: 18px;
@@ -52,6 +50,11 @@
     font-size: 16px;
     margin: 0 5px;
     width: 96%;
+    margin-bottom: 5px;
+}
+
+.map-text {
+    color: #fffbff;
 }
 
 figure {
@@ -72,13 +75,8 @@ figure {
     }
     .map-search-filter-title {
         display: inherit;
-        
     }
-
-    .map-search-input {
-        margin-bottom: 5px;
-
-    }
+    
     .map-search-close-button {
         display: inherit;
     }
